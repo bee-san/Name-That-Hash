@@ -2634,6 +2634,17 @@ prototypes = [
         ]
     ),
     Prototype(
+        regex=re.compile(r"^\$ansible\$2\*[0-9]+\*[a-f0-9]+\*[0-9]+\*[a-f0-9]+\*[0-9]+\*[a-f0-9]+$", re.IGNORECASE),
+        modes=[
+            HashInfo(
+                name="Ansible Vault",
+                hashcat=16900,
+                john="ansible2john",
+                extended=False
+            ),
+        ]
+    ),
+    Prototype(
         regex=re.compile(r"^[A-Za-z0-9-_]*\.[A-Za-z0-9-_]*\.[A-Za-z0-9-_]*$", re.IGNORECASE),
         modes=[
             HashInfo(
