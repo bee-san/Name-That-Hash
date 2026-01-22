@@ -2655,4 +2655,154 @@ prototypes = [
             ),
         ]
     ),
+    Prototype(
+        regex=re.compile(r"^\$truecrypt\$\*.*", re.IGNORECASE),
+        modes=[
+            HashInfo(
+                name="TrueCrypt 5.0+ SHA512 + Twofish-Serpent",
+                hashcat=6222,
+                john="truecrypt",
+                extended=False,
+            ),
+        ],
+    ),
+    Prototype(
+        regex=re.compile(r"^\$veracrypt\$\*.*", re.IGNORECASE),
+        modes=[
+            HashInfo(
+                name="VeraCrypt PBKDF2-HMAC-SHA512 + Serpent-AES",
+                hashcat=13722,
+                john="veracrypt",
+                extended=False,
+            ),
+        ],
+    ),
+    Prototype(
+        regex=re.compile(r"^\$diskcryptor\$\*.*", re.IGNORECASE),
+        modes=[
+            HashInfo(
+                name="DiskCryptor SHA512 + XTS 1024 bit (AES-Twofish)",
+                hashcat=20012,
+                john="diskcryptor",
+                extended=False,
+            ),
+            HashInfo(
+                name="DiskCryptor SHA512 + XTS 1536 bit (AES-Twofish-Serpent)",
+                hashcat=20013,
+                john="diskcryptor",
+                extended=False,
+            ),
+        ],
+    ),
+    Prototype(
+        regex=re.compile(r"^[a-f0-9]{192}$", re.IGNORECASE),
+        modes=[
+            HashInfo(
+                name="Citrix NetScaler (SHA512)",
+                hashcat=22200,
+                john="netscaler",
+                extended=False,
+            ),
+        ],
+    ),
+    Prototype(
+        regex=re.compile(r"^[a-f0-9]{16}:[0-9]{16}$", re.IGNORECASE),
+        modes=[
+            HashInfo(
+                name="DES (PT = $salt, key = $pass) 8",
+                hashcat=14000,
+                john=None,  # John the Ripper doesn't have a simple name for this custom mode. Use None.
+                extended=True,
+            ),
+        ],
+    ),
+    Prototype(
+        regex=re.compile(r"^\$tacacs-plus\$[0-9]\$[a-f0-9]{8}\$[a-f0-9]{8,12}\$[a-f0-9]{4}$", re.IGNORECASE),
+        modes=[
+            HashInfo(
+                name="TACACS+",
+                hashcat=16100,
+                john="tacacs-plus",
+                extended=False,
+            ),
+        ],
+    ),
+    Prototype(
+        regex=re.compile(r"^\$multibit\$\d+\*[0-9a-f]{32}\*[0-9a-f]{32}\*[0-9a-f]{32}$", re.IGNORECASE),
+        modes=[
+            HashInfo(
+                name="MultiBit HD (scrypt)",
+                hashcat=22700,
+                john="multibit-hd",
+                extended=False,
+            ),
+        ],
+    ),
+    Prototype(
+        regex=re.compile(r"^\$jksprivk\$.*", re.IGNORECASE),
+        modes=[
+            HashInfo(
+                name="JKS Java Key Store Private Keys (SHA1)",
+                hashcat=15500,
+                john="jks",
+                extended=False,
+            ),
+        ],
+    ),
+    Prototype(
+        regex=re.compile(r"^[a-f0-9]{128}:[a-f0-9]{8}$", re.IGNORECASE),
+        modes=[
+            HashInfo(
+                name="HMAC-Streebog-512 (key = $salt), big-endian",
+                hashcat=11860,
+                john="hmac-streebog512",
+                extended=True,
+            ),
+        ],
+    ),
+    Prototype(
+        regex=re.compile(r"^[a-f0-9]{50}$", re.IGNORECASE),
+        modes=[
+            HashInfo(
+                name="ArubaOS",
+                hashcat=125,
+                john="arubaos",
+                extended=False,
+            ),
+        ],
+    ),
+    Prototype(
+        regex=re.compile(r"^@s@[a-f0-9]{64}@\d+$", re.IGNORECASE),
+        modes=[
+            HashInfo(
+                name="QNX /etc/shadow (SHA256)",
+                hashcat=19100,
+                john="qnx-sha256",
+                extended=False,
+            ),
+        ],
+    ),
+    Prototype(
+        regex=re.compile(r"^\$truecrypt\$\*[0-9]+\*[0-9]+\*20\*[a-f0-9]{40}\*.*", re.IGNORECASE),
+        modes=[
+            HashInfo(
+                name="TrueCrypt 5.0+ RIPEMD160 + Serpent-Twofish-AES / AES-Twofish-Serpent",
+                hashcat=6213,
+                john="truecrypt",
+                extended=False,
+            ),
+        ],
+    ),
+    Prototype(
+        regex=re.compile(r"^\$truecrypt\$\*[0-9]+\*[0-9]+\*[0-9]+\*[a-f0-9]{32}\*64\*[a-f0-9]{128}\*.*", re.IGNORECASE),
+        modes=[
+            HashInfo(
+                name="TrueCrypt 5.0+ Whirlpool + Twofish-Serpent / AES-Twofish",
+                hashcat=6232,
+                john="truecrypt",
+                extended=False,
+            ),
+        ],
+    ),
+
 ]

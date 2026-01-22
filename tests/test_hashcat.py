@@ -1525,6 +1525,103 @@ def test_hashcat_16700():
     hashes = [
         "$fvde$1$16$84286044060108438487434858307513$20000$f1620ab93192112f0a23eea89b5d4df065661f974b704191"
     ]
-    
     x = runner.api_return_hashes_as_json(hashes)
     assert '"hashcat": 16700,' in x
+
+def test_hashcat_6222():
+    """TrueCrypt 5.0+ SHA512 + Twofish-Serpent"""
+    hashes = [
+    ]
+    x = runner.api_return_hashes_as_json(hashes)
+    assert '"hashcat": 6222,' in x
+
+def test_hashcat_13722():
+    hashes = [
+        "$veracrypt$*0*500000*20*a5796c813d3393144a4d651a2489e525*64*b9195d9858597148b8131d279930f40d8905206f3630737920786576b97607a97217e5883d31b09b55589a1f73752e25f8990c04fa2c0350435c42a44f51950d*32*2048*e467d5e495b54625b64251717277e9b0b4ba713600f6c2436d9354087e59600a"
+    ]
+    x = runner.api_return_hashes_as_json(hashes)
+    assert '"hashcat": 13722,' in x
+
+def test_hashcat_20012():
+    hashes = [
+        "$diskcryptor$*2*0*1*32*e0d16c5b6515a452a8934b175a00486b*2048*f77341e411352f7f98e85559d877e8a3294c6536553257a3e74c856f6720f121"
+    ]
+    x = runner.api_return_hashes_as_json(hashes)
+    assert '"hashcat": 20012,' in x
+
+def test_hashcat_20013():
+    hashes = [
+        "$diskcryptor$*2*0*1*32*e0d16c5b6515a452a8934b175a00486b*3072*27c7686161458e0a2935824c965b8287e52723c34440f8072746f3a3d540236a"
+    ]
+    x = runner.api_return_hashes_as_json(hashes)
+    assert '"hashcat": 20013,' in x
+
+def test_hashcat_22200():
+    hashes = [
+        "2f9282ade42ce148175dc3b4d8b5916dae5211eee49886c3f7cc768f6b9f2eb982a5ac2f2672a0223999bfd15349093278adf12f6276e8b61dacf5572b3f93d0b4fa886ce"
+    ]
+    x = runner.api_return_hashes_as_json(hashes)
+    assert '"hashcat": 22200,' in x
+
+def test_hashcat_14000():
+    hashes = [
+        "a28bc61d44bb815c:1172075784504605"
+    ]
+    x = runner.api_return_hashes_as_json(hashes)
+    assert '"hashcat": 14000,' in x
+
+def test_hashcat_16100():
+    hashes = [
+        "$tacacs-plus$0$5fde8e68$4e13e8fb33df$c006"
+    ]
+    x = runner.api_return_hashes_as_json(hashes)
+    assert '"hashcat": 16100,' in x
+
+def test_hashcat_22700():
+    hashes = [
+        "$multibit$2*2e311aa2cc5ec99f7073cacc8a2d1938*e3ad782e7f92d66a3cdfaec43a46be29*5d1cabd4f4a50ba125f88c47027fff9b"
+    ]
+    x = runner.api_return_hashes_as_json(hashes)
+    assert '"hashcat": 22700,' in x
+
+def test_hashcat_15500():
+    hashes = [
+        "$jksprivk$*5A3AA3C3B7DD7571727E1725FB09953EF3BEDBD9*0867403720562514024857047678064085141322*81*C3*50DDD9F532430367905C9DE31FB1*test"
+    ]
+    x = runner.api_return_hashes_as_json(hashes)
+    assert '"hashcat": 15500,' in x
+
+def test_hashcat_11860():
+    hashes = [
+        "bebf6831b3f9f958acb345a88cb98f30cb0374cff13e6012818487c8dc8d5857f23bca2caed280195ad558b8ce393503e632e901e8d1eb2ccb349a544ac195fd:08151337"
+    ]
+    x = runner.api_return_hashes_as_json(hashes)
+    assert '"hashcat": 11860,' in x
+
+def test_hashcat_125():
+    hashes = [
+        "5387280701327dc2162bdeb451d5a465af6d13eff9276efeba"
+    ]
+    x = runner.api_return_hashes_as_json(hashes)
+    assert '"hashcat": 125,' in x
+
+def test_hashcat_19100():
+    hashes = [
+        "@s@0b365cab7e17ee1e7e1a90078501cc1aa85888d6da34e2f5b04f5c614b882a93@5498317092471604"
+    ]
+    x = runner.api_return_hashes_as_json(hashes)
+    assert '"hashcat": 19100,' in x
+
+def test_hashcat_6213():
+    hashes = [
+        "$truecrypt$*1*2000*20*228d40726715b9442a8b3d6812833077*32*0327774187062a4d0484931a2936a28723c3d551c6c039b5fa01d087b7a66c8b*32*2048*593f65349e5d654c87135c3411b439634e9e7b2311f422c5493b2183188d6c70"
+    ]
+    x = runner.api_return_hashes_as_json(hashes)
+    assert '"hashcat": 6213,' in x
+
+def test_hashcat_6232():
+    hashes = [
+        "$truecrypt$*2*500000*20*1656f50b2ed65c36a4613b91b8f15d9a*64*d66831d1d81f21cc415d487f54716913c7a7261a868516d3f23755452f1b40212f026771d9d40e10b14798f80470200508a65c9c9b19e2760ed9846b4850387b*32*2048*57a8e268fa3d6718d09598282717e17812e95648f8a339962a7442387114b0b1"
+    ]
+    x = runner.api_return_hashes_as_json(hashes)
+    assert '"hashcat": 6232,' in x
