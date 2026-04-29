@@ -3,7 +3,7 @@
 <img src="logo.gif">
 <p align="center">➡️ <a href="http://discord.skerritt.blog">Discord</a> | <a href="https://nth.skerritt.blog">Website</a> ⬅️</p>
 <p align="center">The Modern Hash Identification System<br>
-<code>pip3 install name-that-hash && nth</code>
+<code>pipx install name-that-hash && nth</code>
   <br>
   <a href="https://nth.skerritt.blog">Web App with no install needed</a>
 </p>
