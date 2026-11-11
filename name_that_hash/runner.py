@@ -67,7 +67,7 @@ https://github.com/HashPals/Name-That-Hash [/bold blue]
     "--extreme",
     is_flag=True,
     type=bool,
-    help="Searches for hashes within a string. This mode will get 5d41402abc4b2a76b9719d911017c592 from ####5d41402abc4b2a76b9719d911017c592###",
+    help="Searches for hashes within the string given with --text. This mode will get 5d41402abc4b2a76b9719d911017c592 from ####5d41402abc4b2a76b9719d911017c592###",
 )
 @click.option("--no-banner", is_flag=True, help="Removes banner from startup.")
 @click.option(
@@ -134,7 +134,13 @@ def main(**kwargs):
         hashChecker.file_input(kwargs["file"])
         output = hashChecker.output
     elif kwargs["extreme"]:
-        output = hashChecker.find_all_hashes()
+        # --text takes the branch above, so reaching here means there is no
+        # string to search within. Fail with a usage error instead of
+        # crashing on a missing helper.
+        raise click.UsageError(
+            "--extreme searches for hashes within a string; "
+            "pass the string with --text."
+        )
 
     if kwargs["greppable"]:
         print(pretty_printer.greppable_output(output))
