@@ -69,3 +69,11 @@ def test_kerberos_works():
         ],
     )
     assert "Kerberos" in result.output
+
+
+def test_extreme_without_text_is_usage_error():
+    runner = CliRunner()
+    result = runner.invoke(main, ["--extreme", "--no-banner"])
+    assert result.exit_code != 0
+    assert isinstance(result.exception, SystemExit)
+    assert "--text" in result.output
